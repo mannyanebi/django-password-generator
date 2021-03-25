@@ -14,6 +14,12 @@ def pwdgen(request):
 
     if(request.GET.get('uppercase')):
         characters.extend('ABCDEFGHIJKLMNOPQRST')
+    
+    if(request.GET.get('numbers')):
+        characters.extend('1234567890')
+    
+    if(request.GET.get('special')):
+        characters.extend('~!@#$%^&*()_+')
 
     for i in range(length):
         password += random.choice(characters)
